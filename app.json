@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "Connecta-Senior-Mobile",
-    "slug": "Connecta-Senior-Mobile",
+    "name": "Connecta Senior",
+    "slug": "connecta-senior",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",

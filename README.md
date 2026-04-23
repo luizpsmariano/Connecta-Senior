@@ -1,50 +1,143 @@
-# Welcome to your Expo app 👋
+# Connecta Senior - Aplicativo Mobile
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Um aplicativo mobile inovador desenvolvido com **React Native** e **Expo** para conectar idosos com eventos, atividades e oportunidades de socialização em suas comunidades.
 
-## Get started
+## 🎯 Sobre o Projeto
 
-1. Install dependencies
+Connecta Senior é uma plataforma que facilita a descoberta e participação de idosos em eventos locais, promovendo:
 
-   ```bash
-   npm install
-   ```
+- **Descoberta de Eventos**: Encontre atividades próximas de você
+- **Inscrição Fácil**: Inscreva-se em eventos com um toque
+- **Check-in por Localização**: Confirme sua presença usando geolocalização
+- **Perfil Personalizado**: Acompanhe seus eventos e histórico
 
-2. Start the app
+## 📱 Características
 
-   ```bash
-   npx expo start
-   ```
+### Telas Principais
 
-In the output, you'll find options to open the app in a
+1. **Discovery (Descoberta)**
+   - Lista de eventos próximos
+   - Filtros por categoria
+   - Busca em tempo real
+   - Indicador de lotação
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+2. **Event Detail (Detalhes do Evento)**
+   - Informações completas do evento
+   - Inscrição/Desincrição
+   - Check-in por geolocalização
+   - Compartilhamento
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+3. **Profile (Perfil)**
+   - Informações do usuário
+   - Estatísticas de participação
+   - Histórico de eventos
+   - Configurações
 
-## Get a fresh project
+## 🚀 Começando
 
-When you're ready, run:
+### Pré-requisitos
+
+- Node.js 16+
+- npm ou pnpm
+- Expo CLI
+
+### Instalação
 
 ```bash
-npm run reset-project
+cd Connecta-Senior-Mobile
+npm install
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+### Executar em Desenvolvimento
 
-## Learn more
+```bash
+npm start
+# Pressione 'a' para Android, 'i' para iOS, 'w' para Web
+```
 
-To learn more about developing your project with Expo, look at the following resources:
+### Build para APK
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+Consulte [BUILD_APK.md](./BUILD_APK.md) para instruções detalhadas.
 
-## Join the community
+```bash
+# Build com EAS (recomendado)
+eas build --platform android
+```
 
-Join our community of developers creating universal apps.
+## 📁 Estrutura do Projeto
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+```
+Connecta-Senior-Mobile/
+├── app/                    # Telas e navegação
+│   ├── (tabs)/            # Telas com abas
+│   │   ├── discovery.tsx   # Descoberta de eventos
+│   │   ├── event-detail.tsx # Detalhes do evento
+│   │   └── profile.tsx     # Perfil do usuário
+│   └── _layout.tsx         # Layout raiz
+├── contexts/              # Contextos React
+│   └── EventContext.tsx    # Gerenciamento de eventos
+├── hooks/                 # Hooks customizados
+│   └── useGeolocation.ts   # Hook de geolocalização
+├── components/            # Componentes reutilizáveis
+├── assets/                # Imagens e ícones
+├── app.json              # Configuração Expo
+└── BUILD_APK.md          # Guia de build
+```
+
+## 🛠️ Tecnologias
+
+- React Native 0.81.5
+- Expo 54.0
+- Expo Router 6.0
+- TypeScript
+- Expo Location (Geolocalização)
+
+## 📚 Contextos e Hooks
+
+### EventContext
+
+```typescript
+const { 
+  registerEvent,
+  unregisterEvent,
+  isEventRegistered,
+  checkInEvent,
+  isCheckedIn
+} = useEvent();
+```
+
+### useGeolocation
+
+```typescript
+const { 
+  coordinates,
+  error,
+  loading,
+  requestLocation,
+  watchLocation
+} = useGeolocation();
+```
+
+## 🎨 Design
+
+- Paleta: Azul (#007AFF), Verde (#34C759)
+- Ícones: Ionicons
+- UI responsiva e acessível
+
+## 📞 Suporte
+
+- Documentação Expo: https://docs.expo.dev/
+- Guia de Build: [BUILD_APK.md](./BUILD_APK.md)
+
+## 🎯 Roadmap
+
+- [ ] Integração com backend
+- [ ] Autenticação de usuários
+- [ ] Notificações push
+- [ ] Google Play Store
+- [ ] Apple App Store
+
+---
+
+**Versão**: 1.0.0  
+**Status**: Em desenvolvimento ✨
