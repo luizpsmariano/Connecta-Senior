@@ -1,0 +1,6 @@
+{
+  "name": "Connecta Senior",
+  "description": "A social and community platform for seniors to connect, find activities, and stay safe.",
+  "requestFramePermissions": ["geolocation"],
+  "majorCapabilities": []
+}

@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&family=Inter:wght@400;500;600&display=swap');
+@import "tailwindcss";
+@import url('https://unpkg.com/leaflet@1.9.4/dist/leaflet.css');
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Outfit", sans-serif;
+  
+  --color-brand-primary: #4F46E5; /* Indigo 600 */
+  --color-brand-secondary: #6366F1; /* Indigo 500 */
+  --color-brand-accent: #E11D48; /* Rose 600 */
+  --color-brand-bg: #F8FAFC; /* Slate 50 */
+  --color-brand-card: #FFFFFF;
+  --color-brand-text: #0F172A; /* Slate 900 */
+  --color-brand-muted: #64748B; /* Slate 500 */
+  
+  /* Additional Vibrant Colors */
+  --color-vibrant-emerald: #10B981;
+  --color-vibrant-amber: #F59E0B;
+}
+
+@layer base {
+  body {
+    @apply bg-slate-50 text-brand-text font-sans;
+    font-size: 18px;
+  }
+}
+
+.safe-area-bottom {
+  padding-bottom: env(safe-area-inset-bottom);
+}
